@@ -19,6 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let blogList = []
 
+app.get('/',(req,res) => {
+    res.redirect('/blog')
+})
+
 app.post("/create", (req,res) => {
     const {title,desc,type,username} = req.body;
     const date = Date(timeStamp).toLocaleString('eng-ENG');
